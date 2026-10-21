@@ -1,0 +1,22 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Vector DB storage
+vectordb/
+chroma_db/
+.chroma/
+*.faiss
+*.index
+
+# Environment variables
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE settings
+.idea/

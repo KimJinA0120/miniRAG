@@ -12,10 +12,11 @@ from langchain_chroma import Chroma
 
 
 # [검색] 질문을 같은 임베딩 모델로 벡터화하고, 가장 가까운 청크 top-k개를 가져온다.
-def retrieve(question, k=config.TOP_K):
+# name: 어떤 청킹 설정의 컬렉션에서 찾을지 (실험 때 바꿔 끼운다)
+def retrieve(question, k=config.TOP_K, name=None):
     embeddings = OllamaEmbeddings(model=config.EMBED_MODEL, base_url=config.OLLAMA_URL)
     db = Chroma(
-        collection_name=config.collection_name(),
+        collection_name=name or config.collection_name(),
         embedding_function=embeddings,
         persist_directory=str(config.CHROMA_DIR),
     )

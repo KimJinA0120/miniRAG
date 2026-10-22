@@ -25,3 +25,9 @@ def collection_name(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP):
 
 # [검색] 몇 개의 청크를 가져올지
 TOP_K = 3
+
+# [실험] run_eval.py가 비교할 청킹 설정 (크기 × overlap 조합을 모두 돈다)
+EXP_CHUNK_SIZES = [300, 600, 1000]
+EXP_OVERLAPS = [0, 100]
+QUESTIONS_PATH = BASE_DIR / "experiments" / "questions.csv"
+RESULTS_PATH = BASE_DIR / "experiments" / "results.csv"
